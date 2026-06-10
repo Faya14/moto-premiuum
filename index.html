@@ -1015,8 +1015,17 @@
 
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
-            }
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.8rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .nav-links a {
+        padding: 0.3rem !important;
+        font-size: 0.75rem !important;
+    }
+}
 
             .mobile-menu-btn {
                 display: block;
