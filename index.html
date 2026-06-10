@@ -1539,10 +1539,14 @@ max-width: 768px {
         });
 
         // ===== MOBILE MENU =====
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        mobileMenuBtn.addEventListener('click', () => {
-            alert('Мобильное меню будет добавлено в следующей версии!');
-        });
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
 
         // ===== TYPING EFFECT FOR HERO BADGE =====
         const badge = document.querySelector('.hero-badge');
