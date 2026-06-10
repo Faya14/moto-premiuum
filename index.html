@@ -1013,20 +1013,79 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 0.8rem !important;
-        font-size: 0.75rem !important;
-    }
-    
-    .nav-links a {
-        padding: 0.3rem !important;
-        font-size: 0.75rem !important;
-    }
+      /* ===== НАВИГАЦИЯ ===== */
+.nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
 }
 
+.nav-links li {
+    display: inline-block !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
+
+.nav-links a {
+    display: inline-block !important;
+    padding: 0.5rem 0.8rem !important;
+    text-decoration: none !important;
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: color 0.3s ease !important;
+    white-space: nowrap !important;
+}
+
+.nav-links a:hover {
+    color: var(--accent-rose) !important;
+}
+
+/* Кнопка регистрации */
+.nav-links .btn-register {
+    background: linear-gradient(135deg, var(--accent-rose), var(--accent-lavender)) !important;
+    color: white !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 15px rgba(232, 160, 160, 0.4) !important;
+}
+
+/* Корзина */
+.cart-link {
+    position: relative;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--accent-rose);
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* Скрываем гамбургер на десктопе */
+.mobile-menu-btn {
+    display: none !important;
+}
             .mobile-menu-btn {
                 display: block;
             }
