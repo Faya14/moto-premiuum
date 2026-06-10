@@ -1062,58 +1062,7 @@
                 display: none;
             }
         }
-        /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
-max-width: 768px {
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        transform: translateX(0);
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 1rem;
-        border-radius: 10px;
-        background: var(--blush);
-    }
-
-    .nav-links .btn-register {
-        background: linear-gradient(135deg, var(--accent-rose), var(--accent-lavender)) !important;
-        color: white !important;
-        margin-top: 1rem;
-    }
-
-    .mobile-menu-btn {
-        display: block !important;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--text-dark);
-    }
-
-    .cart-link {
-        margin-top: 0.5rem;
-    }
-}
+       
     </style>
 </head>
 <body>
