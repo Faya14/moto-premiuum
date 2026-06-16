@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - MOTO PREMIUM</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+           <div class="logo" style="max-width: 80px;">
+                <img src= "images/logo-icon.jpg" style="width: 100%; height: auto;"">
+           </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount"></span></a></li>
+                </ul>
+            </nav>
+           <div class="header-actions">
+          
+                <a href="register.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container page-header">
+            <h1>Корзина</h1>
+        </div>
+        
+        <div class="container page-content">
+            <div id="cartContent"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="logo" style="margin-bottom: 12px;">MOTO <span>PREMIUM</span></div>
+                <p>Ваш надёжный партнёр в мире мотоциклов</p>
+            </div>
+            <div>
+                <p>© 2026 MOTO PREMIUM. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function renderCart() {
+            const cartContent = document.getElementById('cartContent');
+            const items = cart.getItems();
+            
+            if (items.length === 0) {
+                cartContent.innerHTML = `
+                    <div class="cart-empty">
+                        <h2>Корзина пуста</h2>
+                        <p>Добавьте мотоциклы из каталога</p>
+                        <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = `
+                <div class="cart-items">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-color);">
+                                <th style="text-align: left; padding: 16px; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">Товар</th>
+                                <th style="text-align: center; padding: 16px; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">Количество</th>
+                                <th style="text-align: right; padding: 16px; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">Цена</th>
+                                <th style="text-align: center; padding: 16px; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            items.forEach(item => {
+                html += `
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 24px 16px;">
+                            <h3 style="margin-bottom: 8px; font-size: 1.1rem;">${item.name}</h3>
+                            <div style="color: var(--color-text-secondary); font-size: 0.875rem;">${item.category}</div>
+                            <div style="color: var(--color-text-secondary); font-size: 0.875rem; margin-top: 4px;">${item.specs}</div>
+                        </td>
+                        <td style="text-align: center; padding: 24px 16px;">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+                                <button onclick="updateQuantity('${item.id}', ${item.quantity - 1})" class="btn btn-secondary" style="padding: 8px 16px; min-width: 40px;">−</button>
+                                <span style="font-size: 1.1rem; min-width: 30px;">${item.quantity}</span>
+                                <button onclick="updateQuantity('${item.id}', ${item.quantity + 1})" class="btn btn-secondary" style="padding: 8px 16px; min-width: 40px;">+</button>
+                            </div>
+                        </td>
+                        <td style="text-align: right; padding: 24px 16px; font-size: 1.25rem; font-weight: 600; color: var(--color-red);">
+                            ${(item.price * item.quantity).toLocaleString('ru-RU')} ₽
+                        </td>
+                        <td style="text-align: center; padding: 24px 16px;">
+                            <button onclick="removeItem('${item.id}')" class="btn btn-secondary" style="padding: 8px 16px;">Удалить</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="cart-summary" style="margin-top: 40px; padding: 32px; background-color: var(--color-gray); border: 1px solid var(--border-color);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h2 style="margin: 0; font-size: 1.5rem;">Итого:</h2>
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--color-red);">
+                            ${cart.getTotal().toLocaleString('ru-RU')} ₽
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px;">
+                        <a href="catalog.html" class="btn btn-secondary" style="flex: 1; text-align: center;">Продолжить покупки</a>
+                        <button onclick="checkout()" class="btn btn-primary" style="flex: 1;">Оформить заказ</button>
+                    </div>
+                    <div style="margin-top: 16px; text-align: center;">
+                        <button onclick="clearCart()" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.875rem;">Очистить корзину</button>
+                    </div>
+                </div>
+            `;
+            
+            cartContent.innerHTML = html;
+        }
+        
+        function updateQuantity(productId, quantity) {
+            if (quantity < 1) {
+                removeItem(productId);
+            } else {
+                cart.updateQuantity(productId, quantity);
+                renderCart();
+            }
+        }
+        
+        function removeItem(productId) {
+            cart.removeItem(productId);
+            renderCart();
+        }
+        
+        function clearCart() {
+            if (confirm('Вы уверены, что хотите очистить корзину?')) {
+                cart.clear();
+                renderCart();
+            }
+        }
+        
+        function checkout() {
+            alert('Функция оформления заказа будет доступна позже. Наш менеджер свяжется с вами для подтверждения заказа.');
+        }
+        
+        // Инициализация
+        renderCart();
+    </script>
+</body>
+</html>

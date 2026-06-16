@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - MOTO PREMIUM</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+           <div class="logo" style="max-width: 80px;">
+                <img src= "images/logo-icon.jpg" style="width: 100%; height: auto;"">
+           </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount"></span></a></li>
+                </ul>
+            </nav>
+           <div class="header-actions">
+          
+                <a href="register.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container page-header">
+            <h1>Присоединяйтесь к нам!</h1>
+            <p class="text-secondary">Станьте частью семьи MOTO PREMIUM</p>
+        </div>
+        
+        <div class="container page-content">
+            <div class="register-container">
+                <div class="register-intro">
+                    <h2>Создать аккаунт</h2>
+                    <p>Заполните форму ниже для регистрации</p>
+                </div>
+
+                <div class="register-benefits">
+                    <div class="benefit-item">
+                        <h3>Ранний доступ к новинкам</h3>
+                        <p>Будьте первыми, кто узнает о новых моделях</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Персональные предложения</h3>
+                        <p>Индивидуальные условия для постоянных клиентов</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Бесплатная консультация</h3>
+                        <p>Экспертная помощь в выборе мотоцикла</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Приоритетная поддержка</h3>
+                        <p>Быстрое решение любых вопросов</p>
+                    </div>
+                </div>
+
+                <div class="register-form">
+                    <form>
+                        <div class="form-row">
+                            <div>
+                                <label>Имя *</label>
+                                <input type="text" placeholder="Введите ваше имя" required>
+                            </div>
+                            <div>
+                                <label>Фамилия *</label>
+                                <input type="text" placeholder="Введите вашу фамилию" required>
+                            </div>
+                        </div>
+
+                        <label>Email *</label>
+                        <input type="email" placeholder="Введите ваш email" required>
+
+                        <label>Телефон *</label>
+                        <input type="tel" placeholder="Введите номер телефона" required>
+
+                        <div class="form-row">
+                            <div>
+                                <label>Пароль *</label>
+                                <input type="password" placeholder="Минимум 8 символов" required>
+                            </div>
+                            <div>
+                                <label>Подтвердите пароль *</label>
+                                <input type="password" placeholder="Повторите пароль" required>
+                            </div>
+                        </div>
+
+                        <label>Какой мотоцикл вас интересует?</label>
+                        <select>
+                            <option value="">Выберите категорию</option>
+                            <option value="sport">Спортивные</option>
+                            <option value="cruiser">Круизеры</option>
+                            <option value="touring">Туристические</option>
+                            <option value="adventure">Приключенческие</option>
+                            <option value="electric">Электрические</option>
+                            <option value="undecided">Ещё не определился</option>
+                        </select>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">Я согласен с условиями использования и политикой конфиденциальности *</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Зарегистрироваться</button>
+
+                        <div class="form-footer">
+                            <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="logo" style="margin-bottom: 12px;">MOTO <span>PREMIUM</span></div>
+                <p>Ваш надёжный партнёр в мире мотоциклов</p>
+            </div>
+            <div>
+                <p>© 2026 MOTO PREMIUM. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
