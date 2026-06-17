@@ -1,5 +1,33 @@
 // script.js
 
+// Мобильное меню
+const burgerMenu = document.getElementById('burgerMenu');
+const nav = document.querySelector('.nav');
+const navList = document.getElementById('navList');
+
+if (burgerMenu && nav) {
+ burgerMenu.addEventListener('click', function() {
+ this.classList.toggle('active');
+ nav.classList.toggle('active');
+ });
+ 
+ // Закрываем меню при клике на ссылку
+ const navLinks = navList.querySelectorAll('a');
+ navLinks.forEach(link => {
+ link.addEventListener('click', () => {
+ burgerMenu.classList.remove('active');
+ nav.classList.remove('active');
+ });
+ });
+ 
+ // Закрываем меню при клике вне его
+ document.addEventListener('click', function(event) {
+ if (!nav.contains(event.target) && !burgerMenu.contains(event.target)) {
+ burgerMenu.classList.remove('active');
+ nav.classList.remove('active');
+ }
+ });
+}
 
 // Класс для работы с корзиной
 class Cart {
