@@ -962,3 +962,82 @@ max-width: 992px {
         text-align: center;
     }
 }
+
+/* Стили для кнопки гамбургер */
+.burger-menu {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ background: none;
+ border: none;
+ cursor: pointer;
+ padding: 5px;
+ z-index: 101;
+}
+
+.burger-menu span {
+ width: 25px;
+ height: 3px;
+ background-color: var(--color-white);
+ transition: all 0.3s ease;
+}
+
+/* Показываем гамбургер только на мобильных */
+max-width: 992px {
+ .burger-menu {
+ display: flex;
+ }
+ 
+ /* Модифицируем навигацию для мобильных */
+ .nav {
+ position: fixed;
+ top: 0;
+ right: -100%;
+ width: 70%;
+ max-width: 300px;
+ height: 100vh;
+ background-color: var(--color-black);
+ padding-top: 80px;
+ transition: right 0.3s ease;
+ box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+ }
+ 
+ .nav.active {
+ right: 0;
+ }
+ 
+ .nav-list {
+ display: flex;
+ flex-direction: column;
+ gap: 0;
+ padding: 20px;
+ }
+ 
+ .nav-list li {
+ border-bottom: 1px solid var(--border-color);
+ }
+ 
+ .nav-list a {
+ display: block;
+ padding: 15px 0;
+ font-size: 1rem;
+ }
+ 
+ /* Анимация гамбургера при открытии */
+ .burger-menu.active span:nth-child(1) {
+ transform: rotate(45deg) translate(5px, 5px);
+ }
+ 
+ .burger-menu.active span:nth-child(2) {
+ opacity: 0;
+ }
+ 
+ .burger-menu.active span:nth-child(3) {
+ transform: rotate(-45deg) translate(7px, -6px);
+ }
+}
+
+
+
+
+
