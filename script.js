@@ -1,33 +1,38 @@
 // script.js
 
-// Мобильное меню
-const burgerMenu = document.getElementById('burgerMenu');
-const nav = document.querySelector('.nav');
-const navList = document.getElementById('navList');
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.getElementById('burgerMenu');
+    const nav = document.getElementById('mainNav');
+    const body = document.body;
 
-if (burgerMenu && nav) {
- burgerMenu.addEventListener('click', function() {
- this.classList.toggle('active');
- nav.classList.toggle('active');
- });
- 
- // Закрываем меню при клике на ссылку
- const navLinks = navList.querySelectorAll('a');
- navLinks.forEach(link => {
- link.addEventListener('click', () => {
- burgerMenu.classList.remove('active');
- nav.classList.remove('active');
- });
- });
- 
- // Закрываем меню при клике вне его
- document.addEventListener('click', function(event) {
- if (!nav.contains(event.target) && !burgerMenu.contains(event.target)) {
- burgerMenu.classList.remove('active');
- nav.classList.remove('active');
- }
- });
-}
+    if (burger && nav) {
+        // Открытие/закрытие меню
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Закрытие при клике на ссылку
+        const links = nav.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Закрытие при клике вне меню (на затемненный фон)
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('active')) {
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+    }
+});
 
 // Класс для работы с корзиной
 class Cart {
