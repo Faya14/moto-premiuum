@@ -903,34 +903,34 @@ label {
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+max-width: 992px {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
-    
+
     .stats-grid,
     .team-grid,
     .services-grid,
     .products-grid,
     .delivery-methods,
-    .work-hours {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
+    .work-hours,
     .models-grid,
     .categories-grid,
     .advantages-grid,
     .reviews-summary {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .contacts-grid,
     .info-grid,
     .register-benefits {
         grid-template-columns: 1fr;
     }
-    
+
     .nav-list {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 }
 
