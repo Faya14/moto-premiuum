@@ -930,7 +930,7 @@ label {
     }
     
     .nav-list {
-        display: none;
+        display: flex;
     }
 }
 
