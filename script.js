@@ -1,8 +1,6 @@
 // script.js
 
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.main-nav').classList.toggle('active');
-});
+
 // Класс для работы с корзиной
 class Cart {
     constructor() {
