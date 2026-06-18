@@ -902,6 +902,55 @@ label {
     color: var(--color-red);
 }
 
+/* Базовые стили для десктопа */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu-toggle {
+  display: none; /* Скрываем кнопку на десктопе */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Мобильные устройства (ширина ≤ 768px) */
+max-width: 768px {
+  .menu-toggle {
+    display: block; /* Показываем гамбургер */
+  }
+
+  .main-nav {
+    display: none; /* Меню скрыто по умолчанию */
+    position: absolute;
+    top: 60px; /* подстройте под высоту хедера */
+    left: 0;
+    width: 100%;
+    background: #fff; /* или цвет фона */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .main-nav.open {
+    display: block; /* Показываем, когда добавлен класс open */
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  /* Чтобы блок со статистикой (5000+, 6 лет и т.д.) был крупным и на видном месте, убедитесь, что он не перекрывается меню и имеет достаточные отступы */
+  .stats-block {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+
 /* Responsive */
 @media (max-width: 992px) {
     h1 { font-size: 2.5rem; }
