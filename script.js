@@ -1,10 +1,6 @@
 // script.js
 
-  function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        // Добавляет или убирает класс 'active' у меню
-        nav.classList.toggle('active');
-    }
+
 
 // Класс для работы с корзиной
 class Cart {
