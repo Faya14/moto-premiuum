@@ -12,13 +12,18 @@
 <body>
     <header class="header">
         <div class="container header-inner">
+            <!-- Ваш логотип -->
            <div class="logo" style="max-width: 80px;">
                 <img src= "images/logo-icon.jpg" style="width: 100%; height: auto;">
            </div>
                <a> 
             </a>
-            <nav>
-                <ul class="nav-list">
+            <!-- Гамбургер-кнопка (только для мобильных) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Меню">☰</button>
+            
+                <!-- Навигационное меню -->
+            <nav class="main-nav" id="mainNav">
+                <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О компании</a></li>
                     <li><a href="services.html">Услуги</a></li>
