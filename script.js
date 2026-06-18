@@ -1,5 +1,18 @@
 // script.js
 
+const toggleBtn = document.getElementById('menuToggle');
+const nav = document.getElementById('mainNav');
+
+toggleBtn.addEventListener('click', function() {
+  nav.classList.toggle('open');
+});
+
+// Закрывать меню при клике на ссылку (опционально)
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+});
 
 // Класс для работы с корзиной
 class Cart {
