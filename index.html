@@ -17,8 +17,8 @@
            </div>
                <a> 
             </a>
-            <nav>
-                <ul class="nav-list">
+            <nav class="mobile-menu" id="mobileMenu">
+                <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О компании</a></li>
                     <li><a href="services.html">Услуги</a></li>
@@ -181,6 +181,23 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+         const menuIcon = document.querySelector('.menu-icon'); // или класс твоей иконки ☰
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  menuIcon.addEventListener('click', function() {
+    mobileMenu.classList.toggle('active');
+  });
+  
+  // Закрыть меню при клике на ссылку
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+  });
+    </script>
 </body>
 </html>
+
+
+
