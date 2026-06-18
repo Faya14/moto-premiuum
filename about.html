@@ -3,17 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О компании - MOTO PREMIUM</title>
+    <title>MOTO PREMIUM - Мотоциклы мечты</title>
+    <style>
+        /* --- Базовые стили для Шапки (Header) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111; /* Твой цвет фона */
+    color: white;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-reg {
+    background-color: #d32f2f; /* Красный цвет кнопки */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Скрываем иконку меню на компьютере */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* --- МАГИЯ ДЛЯ МОБИЛЬНЫХ (Адаптивность) --- */
+@media screen and (max-width: 768px) {
+    
+    /* Показываем иконку меню */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Превращаем меню в выпадающий список */
+    .nav-links {
+        display: none; /* Скрыто по умолчанию */
+        position: absolute;
+        top: 70px; /* Отступ сверху */
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 20px;
+        z-index: 1000;
+    }
+
+    /* Ссылки внутри мобильного меню */
+    .nav-links a {
+        display: block;
+        margin: 15px 0;
+        font-size: 18px;
+    }
+
+    /* Класс, который добавляет JS, чтобы показать меню */
+    .nav-links.active {
+        display: flex;
+    }
+    
+    /* Кнопку регистрации можно скрыть или уменьшить на телефоне, если не влезает */
+    .btn-reg {
+        display: none; /* Или оставь, если место есть */
+    }
+}
+    </style>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-         <div class="container header-inner">
+        <div class="container header-inner">
            <div class="logo" style="max-width: 80px;">
-                <img src= "images/logo-icon.jpg" style="width: 100%; height: auto;"">
+                <img src= "images/logo-icon.jpg" style="width: 100%; height: auto;">
            </div>
-                <ul class="nav-list">
+               <a> 
+            </a>
+            <!-- Ссылки меню (видны на ПК) -->
+            <nav class="nav-links" id="navLink">
+                <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О компании</a></li>
                     <li><a href="services.html">Услуги</a></li>
