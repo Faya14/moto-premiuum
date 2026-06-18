@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - MOTO PREMIUM</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+           <div class="logo" style="max-width: 80px;">
+                <img src= "images/logo-icon.jpg" style="width: 100%; height: auto;"">
+           </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount"></span></a></li>
+                </ul>
+            </nav>
+           <div class="header-actions">
+          
+                <a href="register.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container page-header">
+            <h1>Вход в аккаунт</h1>
+            <p class="text-secondary">Войдите, чтобы управлять своими заказами</p>
+        </div>
+        
+        <div class="container page-content">
+            <div class="register-container">
+                <div class="register-form">
+                    <form>
+                        <label>Email *</label>
+                        <input type="email" placeholder="Введите ваш email" required>
+
+                        <label>Пароль *</label>
+                        <input type="password" placeholder="Введите пароль" required>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Запомнить меня</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Войти</button>
+
+                        <div class="form-footer">
+                            <p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+                            <p style="margin-top: 12px;"><a href="#">Забыли пароль?</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="logo" style="margin-bottom: 12px;">MOTO <span>PREMIUM</span></div>
+                <p>Ваш надёжный партнёр в мире мотоциклов</p>
+            </div>
+            <div>
+                <p>© 2026 MOTO PREMIUM. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
