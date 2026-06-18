@@ -904,33 +904,17 @@ label {
 
 /* Responsive */
 @media (max-width: 992px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    
-    .stats-grid,
-    .team-grid,
-    .services-grid,
-    .products-grid,
-    .delivery-methods,
-    .work-hours {
-        grid-template-columns: repeat(2, 1fr);
+    .menu-toggle {
+        display: block; /* показываем бургер */
     }
-    
-    .models-grid,
-    .categories-grid,
-    .advantages-grid,
-    .reviews-summary {
-        grid-template-columns: repeat(2, 1fr);
+    .main-nav {
+        display: none; /* скрываем меню */
     }
-    
-    .contacts-grid,
-    .info-grid,
-    .register-benefits {
-        grid-template-columns: 1fr;
+     .main-nav.active {
+        display: block; /* показываем при активном классе */
     }
-    
-    .nav-list {
-        display: none;
+    .main-nav ul {
+        flex-direction: column; /* вертикальное расположение */
     }
 }
 
