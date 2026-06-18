@@ -904,17 +904,33 @@ label {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .menu-toggle {
-        display: block; /* показываем бургер */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .stats-grid,
+    .team-grid,
+    .services-grid,
+    .products-grid,
+    .delivery-methods,
+    .work-hours {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .main-nav {
-        display: none; /* скрываем меню */
+    
+    .models-grid,
+    .categories-grid,
+    .advantages-grid,
+    .reviews-summary {
+        grid-template-columns: repeat(2, 1fr);
     }
-     .main-nav.active {
-        display: block; /* показываем при активном классе */
+    
+    .contacts-grid,
+    .info-grid,
+    .register-benefits {
+        grid-template-columns: 1fr;
     }
-    .main-nav ul {
-        flex-direction: column; /* вертикальное расположение */
+    
+    .nav-list {
+        display: none;
     }
 }
 
