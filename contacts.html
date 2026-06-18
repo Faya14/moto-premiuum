@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - MOTO PREMIUM</title>
+    <title>MOTO PREMIUM - Мотоциклы мечты</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-       <div class="container header-inner">
-           <div class="logo" style="max-width: 80px;">
-                <img src= "images/logo-icon.jpg" style="width: 100%; height: auto;"">
-           </div>
+        <div class="container header-inner">
+            <div class="logo" style="max-width: 80px;">
+                <img src="images/logo-icon.jpg" style="width: 100%; height: auto;">
+            </div>
+
+            <!-- Кнопка-гамбургер (только для мобильных) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Меню">☰</button>
+
+            <!-- Навигация -->
+            <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О компании</a></li>
@@ -24,8 +32,8 @@
                     <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount"></span></a></li>
                 </ul>
             </nav>
-           <div class="header-actions">
-          
+
+            <div class="header-actions">
                 <a href="register.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Регистрация</a>
             </div>
         </div>
