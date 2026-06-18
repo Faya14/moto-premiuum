@@ -1,18 +1,6 @@
 // script.js
 
-const menuIcon = document.querySelector('.menu-icon'); // или класс твоей иконки ☰
-  const mobileMenu = document.getElementById('mobileMenu');
-  
-  menuIcon.addEventListener('click', function() {
-    mobileMenu.classList.toggle('active');
-  });
-  
-  // Закрыть меню при клике на ссылку
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-    });
-  });
+
 
 // Класс для работы с корзиной
 class Cart {
